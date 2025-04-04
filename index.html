@@ -14,7 +14,9 @@
         </header>
 
         <main class="poll-container">
-            <form name="inspiration-form" method="POST" data-netlify="true">
+            <form name="inspiration-form" method="POST" data-netlify="true" netlify>
+                <!-- Hidden input required for Netlify forms -->
+                <input type="hidden" name="form-name" value="inspiration-form">
                 <div class="question-block" id="q1">
                     <label class="checkbox-container">
                         <span class="question">Were you inspired today?</span>

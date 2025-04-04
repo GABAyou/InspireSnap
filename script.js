@@ -96,14 +96,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function handleSubmit(e) {
-        // Form validation is handled by HTML5 (required attribute)
+        e.preventDefault();
         
-        // Clear local storage after successful submission
-        localStorage.removeItem('inspireSnapState');
-        
-        // Show thank you message
-        alert('Thank you for sharing your inspiration! We\'ll be in touch.');
-        
-        // Form submission is handled automatically by Netlify
+        const form = e.target;
+        const formData = new FormData(form);
+
+        // Ensure checkbox values are properly set
+        formData.set('inspired', q1.checked);
+        formData.set('saw_inspiration', q2.checked);
+        formData.set('caused_inspiration', q3.checked);
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            // Clear local storage after successful submission
+            localStorage.removeItem('inspireSnapState');
+            
+            // Show thank you message
+            alert('Thank you for sharing your inspiration! We\'ll be in touch.');
+            
+            // Reset form
+            form.reset();
+            
+            // Reset UI state
+            document.getElementById('q2').classList.add('hidden');
+            document.getElementById('q3').classList.add('hidden');
+            document.getElementById('story-section').classList.add('hidden');
+            document.getElementById('email-section').classList.add('hidden');
+        })
+        .catch((error) => {
+            alert('Oops! There was a problem submitting your form. Please try again.');
+            console.error(error);
+        });
     }
 });
