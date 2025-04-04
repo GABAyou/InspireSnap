@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         saveState();
     });
 
-    // Submit handler
-    submitBtn.addEventListener('click', handleSubmit);
+    // Form submission handler
+    document.querySelector('form[name="inspiration-form"]').addEventListener('submit', handleSubmit);
 
     // Functions
     function toggleNextQuestion(checkbox, nextId) {
@@ -95,28 +95,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function handleSubmit() {
-        const email = document.getElementById('email').value;
-        const story = document.getElementById('inspiration-story').value;
+    function handleSubmit(e) {
+        // Form validation is handled by HTML5 (required attribute)
         
-        if (!email) {
-            alert('Please enter your email to submit your inspiration!');
-            return;
-        }
-
-        // For now, we'll just log the submission
-        console.log('Submission:', {
-            inspired: q1.checked,
-            sawInspiration: q2.checked,
-            causedInspiration: q3.checked,
-            story,
-            email
-        });
-
+        // Clear local storage after successful submission
+        localStorage.removeItem('inspireSnapState');
+        
+        // Show thank you message
         alert('Thank you for sharing your inspiration! We\'ll be in touch.');
         
-        // Clear state and form
-        localStorage.removeItem('inspireSnapState');
-        location.reload();
+        // Form submission is handled automatically by Netlify
     }
 });

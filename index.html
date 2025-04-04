@@ -14,38 +14,40 @@
         </header>
 
         <main class="poll-container">
-            <div class="question-block" id="q1">
-                <label class="checkbox-container">
-                    <span class="question">Were you inspired today?</span>
-                    <input type="checkbox" id="inspired">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
+            <form name="inspiration-form" method="POST" data-netlify="true">
+                <div class="question-block" id="q1">
+                    <label class="checkbox-container">
+                        <span class="question">Were you inspired today?</span>
+                        <input type="checkbox" id="inspired" name="inspired">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
 
-            <div class="question-block hidden" id="q2">
-                <label class="checkbox-container">
-                    <span class="question">Did you see something inspiring?</span>
-                    <input type="checkbox" id="saw-inspiration">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
+                <div class="question-block hidden" id="q2">
+                    <label class="checkbox-container">
+                        <span class="question">Did you see something inspiring?</span>
+                        <input type="checkbox" id="saw-inspiration" name="saw_inspiration">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
 
-            <div class="question-block hidden" id="q3">
-                <label class="checkbox-container">
-                    <span class="question">Did you cause inspiration?</span>
-                    <input type="checkbox" id="caused-inspiration">
-                    <span class="checkmark"></span>
-                </label>
-            </div>
+                <div class="question-block hidden" id="q3">
+                    <label class="checkbox-container">
+                        <span class="question">Did you cause inspiration?</span>
+                        <input type="checkbox" id="caused-inspiration" name="caused_inspiration">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
 
-            <div class="inspiration-input hidden" id="story-section">
-                <textarea id="inspiration-story" placeholder="Share your inspiration story..." rows="4"></textarea>
-            </div>
+                <div class="inspiration-input hidden" id="story-section">
+                    <textarea id="inspiration-story" name="inspiration_story" placeholder="Share your inspiration story..." rows="4"></textarea>
+                </div>
 
-            <div class="email-section hidden" id="email-section">
-                <input type="email" id="email" placeholder="Your email for daily inspiration">
-                <button id="submit-btn">Submit</button>
-            </div>
+                <div class="email-section hidden" id="email-section">
+                    <input type="email" id="email" name="email" placeholder="Your email for daily inspiration" required>
+                    <button type="submit" id="submit-btn">Submit</button>
+                </div>
+            </form>
         </main>
 
         <footer>
