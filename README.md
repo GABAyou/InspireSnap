@@ -2,6 +2,8 @@
 
 A progressive inspiration tracking poll that helps capture and spread moments of inspiration.
 
+🌐 **[Live Demo](https://stalwart-chaja-c1f556.netlify.app/)**
+
 ## Features
 
 - Progressive poll system that unlocks questions based on responses
