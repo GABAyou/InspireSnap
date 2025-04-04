@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InspireSnap - Track Your Inspiration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>InspireSnap</h1>
+            <p>Track and share your daily inspiration journey</p>
+        </header>
+
+        <main class="poll-container">
+            <div class="question-block" id="q1">
+                <label class="checkbox-container">
+                    <span class="question">Were you inspired today?</span>
+                    <input type="checkbox" id="inspired">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="question-block hidden" id="q2">
+                <label class="checkbox-container">
+                    <span class="question">Did you see something inspiring?</span>
+                    <input type="checkbox" id="saw-inspiration">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="question-block hidden" id="q3">
+                <label class="checkbox-container">
+                    <span class="question">Did you cause inspiration?</span>
+                    <input type="checkbox" id="caused-inspiration">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="inspiration-input hidden" id="story-section">
+                <textarea id="inspiration-story" placeholder="Share your inspiration story..." rows="4"></textarea>
+            </div>
+
+            <div class="email-section hidden" id="email-section">
+                <input type="email" id="email" placeholder="Your email for daily inspiration">
+                <button id="submit-btn">Submit</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Your responses are stored locally</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
